@@ -108,18 +108,15 @@ export function Footer() {
             </p>
             <div className="flex gap-4 justify-start">
               {socialLinks.map((social) => (
-                <motion.a
+                <motion.div
                   key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition-colors"
+                  className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition-colors cursor-default"
                   aria-label={social.name}
                 >
                   {social.icon}
-                </motion.a>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -209,17 +206,6 @@ export function Footer() {
             <p className="text-sm text-gray-600 text-center md:text-left">
               © {new Date().getFullYear()} {language === 'ar' ? 'السوق السعودي للمنتجات' : 'Saudi Products Market'}. {t('footer.allRightsReserved')}.
             </p>
-            <div className="flex items-center space-x-2 rtl:space-x-reverse text-sm text-gray-600">
-              <span>{t('footer.madeWith')}</span>
-              <motion.span
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-                className="text-green-600"
-              >
-                ❤️
-              </motion.span>
-              <span>{t('footer.in')} {language === 'ar' ? 'السوق السعودي للمنتجات' : 'Saudi Products Market'}</span>
-            </div>
           </div>
         </motion.div>
       </div>

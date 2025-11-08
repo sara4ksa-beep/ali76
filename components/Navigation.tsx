@@ -65,7 +65,7 @@ export function Navigation() {
                 className="h-16 w-auto object-contain"
                 priority
               />
-              <span className="text-2xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold text-green-800">
                 {language === 'ar' ? 'السوق السعودي للمنتجات' : 'Saudi Products Market'}
               </span>
             </Link>
@@ -81,7 +81,7 @@ export function Navigation() {
               >
                 <Link
                   href={link.href}
-                  className="relative text-gray-700 hover:text-green-600 transition-colors font-medium px-3 py-2 rounded-lg hover:bg-green-50"
+                  className="relative text-green-800 hover:text-green-600 transition-colors font-medium px-3 py-2 rounded-lg hover:bg-green-50"
                 >
                   {link.label}
                   <motion.span
@@ -111,7 +111,7 @@ export function Navigation() {
                   <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold text-sm">
                     {getUserDisplayName().charAt(0).toUpperCase()}
                   </div>
-                  <span className="text-gray-700 font-medium hidden lg:block">
+                  <span className="text-green-800 font-medium hidden lg:block">
                     {getUserDisplayName()}
                   </span>
                   <motion.svg
@@ -204,7 +204,7 @@ export function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.3 }}
               >
-                <Link href="/login" className="text-gray-700 hover:text-green-600 transition-colors font-medium px-4 py-2 rounded-lg hover:bg-green-50">
+                <Link href="/login" className="text-green-800 hover:text-green-600 transition-colors font-medium px-4 py-2 rounded-lg hover:bg-green-50">
                   {t('common.login')}
                 </Link>
               </motion.div>
@@ -242,7 +242,7 @@ export function Navigation() {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="md:hidden text-gray-700 p-2 rounded-lg hover:bg-green-50 transition-colors"
+            className="md:hidden text-green-800 p-2 rounded-lg hover:bg-green-50 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -283,7 +283,7 @@ export function Navigation() {
                     <Link
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
-                      className="block px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors font-medium"
+                      className="block px-4 py-3 text-green-800 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors font-medium"
                     >
                       {link.label}
                     </Link>
@@ -347,7 +347,7 @@ export function Navigation() {
                     <Link
                       href="/login"
                       onClick={() => setMenuOpen(false)}
-                      className="block px-4 py-3 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors font-medium"
+                      className="block px-4 py-3 text-green-800 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors font-medium"
                     >
                       {t('common.login')}
                     </Link>
