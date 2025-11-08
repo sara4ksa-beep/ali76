@@ -34,7 +34,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: "easeOut" as const,
     },
   },
 };
@@ -46,7 +46,7 @@ const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.4,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: "easeOut" as const,
     },
   },
 };
@@ -74,7 +74,7 @@ export default function HomePage() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-7xl mx-auto text-center relative z-10"
         >
           <motion.h1

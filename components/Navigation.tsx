@@ -46,7 +46,7 @@ export function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className="glass sticky top-0 z-50 border-b border-rose-100/50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
