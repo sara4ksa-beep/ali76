@@ -1,36 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff1f2;
-  --foreground: #4c1d24;
-  --primary: #e11d48;
-  --primary-dark: #be123c;
-  --primary-light: #fce7f3;
-  --secondary: #f43f5e;
-  --accent: #fb7185;
-  --muted: #fdf2f8;
-  --border: #fbcfe8;
+  --background: #f0fdf4;
+  --foreground: #14532d;
+  --primary: #16a34a;
+  --primary-dark: #15803d;
+  --primary-light: #dcfce7;
+  --secondary: #22c55e;
+  --accent: #4ade80;
+  --muted: #f0fdf4;
+  --border: #bbf7d0;
   --card: #ffffff;
   --card-foreground: #1f2937;
   
   /* Enhanced color palette */
-  --rose-50: #fff1f2;
-  --rose-100: #ffe4e6;
-  --rose-200: #fecdd3;
-  --rose-300: #fda4af;
-  --rose-400: #fb7185;
-  --rose-500: #f43f5e;
-  --rose-600: #e11d48;
-  --rose-700: #be123c;
-  --rose-800: #9f1239;
-  --rose-900: #881337;
+  --green-50: #f0fdf4;
+  --green-100: #dcfce7;
+  --green-200: #bbf7d0;
+  --green-300: #86efac;
+  --green-400: #4ade80;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --green-800: #166534;
+  --green-900: #14532d;
   
   /* Shadow system */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-rose: 0 10px 15px -3px rgb(225 29 72 / 0.1), 0 4px 6px -4px rgb(225 29 72 / 0.1);
+  --shadow-green: 0 10px 15px -3px rgb(22 163 74 / 0.1), 0 4px 6px -4px rgb(22 163 74 / 0.1);
   
   /* Spacing scale */
   --spacing-xs: 0.25rem;
@@ -71,17 +71,17 @@
 }
 
 [data-theme="dark"] {
-  --background: #1f1317;
-  --foreground: #fce7f3;
-  --primary: #f43f5e;
-  --primary-dark: #e11d48;
-  --primary-light: #4c1d24;
-  --secondary: #fb7185;
-  --accent: #fda4af;
-  --muted: #2d1b20;
-  --border: #4c1d24;
-  --card: #2d1b20;
-  --card-foreground: #fce7f3;
+  --background: #0a1f0e;
+  --foreground: #dcfce7;
+  --primary: #22c55e;
+  --primary-dark: #16a34a;
+  --primary-light: #14532d;
+  --secondary: #4ade80;
+  --accent: #86efac;
+  --muted: #1a2e1a;
+  --border: #166534;
+  --card: #1a2e1a;
+  --card-foreground: #dcfce7;
 }
 
 html {
@@ -91,12 +91,97 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-cairo), -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, Helvetica, sans-serif;
+  font-family: var(--font-cairo), 'Cairo', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+/* Fix Arabic text vertical alignment */
+[dir="rtl"] *, [lang="ar"] * {
+  vertical-align: baseline !important;
+  line-height: 1.8;
+  letter-spacing: 0 !important;
+}
+
+[dir="rtl"] span, [lang="ar"] span,
+[dir="rtl"] p, [lang="ar"] p,
+[dir="rtl"] h1, [lang="ar"] h1,
+[dir="rtl"] h2, [lang="ar"] h2,
+[dir="rtl"] h3, [lang="ar"] h3,
+[dir="rtl"] h4, [lang="ar"] h4,
+[dir="rtl"] h5, [lang="ar"] h5,
+[dir="rtl"] h6, [lang="ar"] h6 {
+  vertical-align: baseline;
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+
+/* Arabic text rendering improvements */
+[dir="rtl"], [lang="ar"], * {
+  font-family: var(--font-cairo), 'Cairo', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+}
+
+[dir="rtl"], [lang="ar"] {
+  font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: common-ligatures;
+  font-kerning: normal;
+  vertical-align: baseline;
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+
+/* Ensure Arabic diacritics and dots are visible */
+* {
+  -webkit-font-feature-settings: "liga", "kern", "calt";
+  font-feature-settings: "liga", "kern", "calt";
+}
+
+/* Force proper rendering of Arabic characters with dots */
+[dir="rtl"] *, [lang="ar"] *, body * {
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Specific fix for Arabic Yeh (ي) to ensure dots are visible */
+[dir="rtl"] *, [lang="ar"] * {
+  unicode-bidi: embed;
+  font-family: var(--font-cairo), 'Cairo', 'Segoe UI', 'Tahoma', 'Arial Unicode MS', sans-serif;
+}
+
+/* Prevent automatic character substitution for Arabic Yeh */
+[dir="rtl"] *, [lang="ar"] * {
+  font-variant-east-asian: normal;
+  text-transform: none;
+  font-feature-settings: "liga" 1, "kern" 1, "calt" 0;
+  -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0;
+}
+
+/* Force correct rendering of ي (YEH) character - prevent substitution to ى */
+body, * {
+  -webkit-font-feature-settings: "liga" 1, "kern" 1;
+  font-feature-settings: "liga" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: common-ligatures;
+}
+
+/* Ensure proper Arabic character rendering - prevent ي from becoming ى */
+@supports (font-variant-east-asian: normal) {
+  [dir="rtl"], [lang="ar"], body {
+    font-variant-east-asian: normal;
+    font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "ss01" 0;
+    -webkit-font-feature-settings: "liga" 1, "kern" 1, "calt" 0, "ss01" 0;
+  }
 }
 
 /* Typography scale */
@@ -104,6 +189,18 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
+}
+
+/* Arabic headings - better line height */
+[dir="rtl"] h1, [lang="ar"] h1,
+[dir="rtl"] h2, [lang="ar"] h2,
+[dir="rtl"] h3, [lang="ar"] h3,
+[dir="rtl"] h4, [lang="ar"] h4,
+[dir="rtl"] h5, [lang="ar"] h5,
+[dir="rtl"] h6, [lang="ar"] h6 {
+  line-height: 1.6;
+  letter-spacing: 0;
+  vertical-align: baseline;
 }
 
 h1 {
@@ -160,7 +257,7 @@ button:active, .btn:active {
 }
 
 .glass-dark {
-  background: rgba(31, 19, 23, 0.8);
+  background: rgba(10, 31, 14, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -200,7 +297,7 @@ button:active, .btn:active {
   background: linear-gradient(
     90deg,
     var(--muted) 0px,
-    var(--rose-100) 40px,
+    var(--green-100) 40px,
     var(--muted) 80px
   );
   background-size: 1000px;
@@ -208,10 +305,10 @@ button:active, .btn:active {
 }
 
 /* Gradient utilities */
-.gradient-rose {
-  background: linear-gradient(135deg, var(--rose-500) 0%, var(--rose-700) 100%);
+.gradient-green {
+  background: linear-gradient(135deg, var(--green-500) 0%, var(--green-700) 100%);
 }
 
-.gradient-rose-light {
-  background: linear-gradient(135deg, var(--rose-50) 0%, var(--rose-100) 50%, var(--rose-50) 100%);
+.gradient-green-light {
+  background: linear-gradient(135deg, var(--green-50) 0%, var(--green-100) 50%, var(--green-50) 100%);
 }

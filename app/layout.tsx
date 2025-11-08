@@ -9,11 +9,14 @@ const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["latin", "arabic"],
   weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+  adjustFontFallback: true,
+  preload: true,
 });
 
 export const metadata: Metadata = {
-  title: "متجر ميسونا",
-  description: "Beautiful e-commerce store with rosy colors",
+  title: "السوق السعودي للمنتجات",
+  description: "Saudi Products Market - Beautiful e-commerce store with green theme",
 };
 
 export default function RootLayout({
@@ -22,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr">
       <body
         className={`${cairo.variable} antialiased flex flex-col min-h-screen`}
       >

@@ -101,7 +101,7 @@ export default function FavoritesPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 py-8 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-50 to-green-100 py-8 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[...Array(8)].map((_, i) => (
@@ -114,12 +114,12 @@ export default function FavoritesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-50 to-green-100 py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-rose-600 via-rose-500 to-pink-500 bg-clip-text text-transparent mb-8"
+          className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 via-green-500 to-green-500 bg-clip-text text-transparent mb-8"
         >
           {t('favorites.title')}
         </motion.h1>
@@ -152,7 +152,7 @@ export default function FavoritesPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-block bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg shadow-rose-200 transition-all"
+                className="inline-block bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg shadow-green-200 transition-all"
               >
                 {t('favorites.browseProducts')}
               </motion.button>
@@ -174,7 +174,7 @@ export default function FavoritesPage() {
                     className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all group relative"
                   >
                     <Link href={`/products/${favorite.product.id}`}>
-                      <div className="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 relative overflow-hidden">
+                      <div className="aspect-square bg-gradient-to-br from-green-100 to-green-100 relative overflow-hidden">
                         {favorite.product.images[0] ? (
                           <motion.div
                             whileHover={{ scale: 1.1 }}
@@ -203,11 +203,11 @@ export default function FavoritesPage() {
                     </Link>
                     <div className="p-5">
                       <Link href={`/products/${favorite.product.id}`}>
-                        <h3 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-rose-600 transition-colors line-clamp-2">
+                        <h3 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-green-600 transition-colors line-clamp-2">
                           {getName(favorite.product)}
                         </h3>
                       </Link>
-                      <p className="text-rose-600 font-bold text-xl mb-2">
+                      <p className="text-green-600 font-bold text-xl mb-2">
                         ${favorite.product.price.toFixed(2)}
                       </p>
                       <p className="text-sm text-gray-500 mb-4">

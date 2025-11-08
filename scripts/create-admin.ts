@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 async function createAdmin() {
   try {
-    const email = process.argv[2] || 'admin@misoona.com';
+    const email = process.argv[2] || 'admin@saudiproductsmarket.com';
     const password = process.argv[3] || 'admin123';
     const name = process.argv[4] || 'Admin User';
 

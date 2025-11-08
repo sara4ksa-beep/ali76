@@ -19,20 +19,20 @@ export default function PrivacyPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-rose-100">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-50 to-green-100">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-rose-100 via-pink-100 to-rose-200 py-20 md:py-28 px-4">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(225,29,72,0.1),transparent_50%)]" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-green-100 via-green-100 to-green-200 py-20 md:py-28 px-4">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(22,163,74,0.1),transparent_50%)]" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center relative z-10"
         >
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-rose-600 via-rose-500 to-pink-500 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-600 via-green-500 to-green-500 bg-clip-text text-transparent mb-6">
             {t('privacy.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-rose-700 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-green-700 max-w-2xl mx-auto">
             {t('privacy.subtitle')}
           </p>
           <p className="text-sm text-gray-600 mt-4">
@@ -51,7 +51,7 @@ export default function PrivacyPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-rose-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
               {t('privacy.introduction')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-rose-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
               {t('privacy.informationWeCollect')}
             </h2>
             <div className="space-y-4">
@@ -107,7 +107,7 @@ export default function PrivacyPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-rose-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
               {t('privacy.howWeUse')}
             </h2>
             <ul className="space-y-3 text-lg text-gray-700 leading-relaxed list-disc list-inside">
@@ -126,7 +126,7 @@ export default function PrivacyPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-rose-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
               {t('privacy.dataProtection')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
@@ -144,7 +144,7 @@ export default function PrivacyPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-rose-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
               {t('privacy.yourRights')}
             </h2>
             <ul className="space-y-3 text-lg text-gray-700 leading-relaxed list-disc list-inside">
@@ -162,14 +162,14 @@ export default function PrivacyPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-rose-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
               {t('privacy.contactUs')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
               {t('privacy.contactContent')}
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              <strong>{t('privacy.email')}:</strong> support@misoona.com
+              <strong>{t('privacy.email')}:</strong> support@saudiproductsmarket.com
             </p>
           </motion.div>
         </div>

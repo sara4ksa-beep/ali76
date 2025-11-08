@@ -94,7 +94,7 @@ export function ProductDetail({ productId }: { productId: string }) {
           className="space-y-4"
         >
           {product.images[0] && (
-            <div className="aspect-square relative bg-gradient-to-br from-rose-100 to-pink-100 rounded-2xl overflow-hidden">
+            <div className="aspect-square relative bg-gradient-to-br from-green-100 to-green-100 rounded-2xl overflow-hidden">
               <motion.div
                 key={selectedImage}
                 initial={{ opacity: 0 }}
@@ -120,7 +120,7 @@ export function ProductDetail({ productId }: { productId: string }) {
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedImage(index)}
                   className={`relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 border-2 ${
-                    selectedImage === index ? 'border-rose-600' : 'border-transparent'
+                    selectedImage === index ? 'border-green-600' : 'border-transparent'
                   }`}
                 >
                   <Image src={img} alt={`${getName()} ${index + 1}`} fill className="object-cover" />
@@ -140,7 +140,7 @@ export function ProductDetail({ productId }: { productId: string }) {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
               {getName()}
             </h1>
-            <p className="text-4xl font-bold bg-gradient-to-r from-rose-600 to-rose-500 bg-clip-text text-transparent mb-6">
+            <p className="text-4xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent mb-6">
               ${product.price.toFixed(2)}
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
@@ -148,21 +148,21 @@ export function ProductDetail({ productId }: { productId: string }) {
             </p>
             {product.category && (
               <p className="text-sm text-gray-500 mb-4">
-                {t('common.category')}: <span className="font-semibold text-rose-600">
+                {t('common.category')}: <span className="font-semibold text-green-600">
                   {language === 'ar' ? product.category.nameAr : product.category.name}
                 </span>
               </p>
             )}
           </div>
 
-          <div className="flex items-center gap-4 p-4 bg-rose-50 rounded-xl">
+          <div className="flex items-center gap-4 p-4 bg-green-50 rounded-xl">
             <label className="font-semibold text-gray-700">{t('common.quantity')}:</label>
             <div className="flex items-center gap-2">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="w-10 h-10 rounded-lg bg-white border-2 border-rose-200 text-rose-600 font-bold hover:bg-rose-100 transition-colors"
+                className="w-10 h-10 rounded-lg bg-white border-2 border-green-200 text-green-600 font-bold hover:bg-green-100 transition-colors"
               >
                 -
               </motion.button>
@@ -172,13 +172,13 @@ export function ProductDetail({ productId }: { productId: string }) {
                 max={product.stock}
                 value={quantity}
                 onChange={(e) => setQuantity(Math.max(1, Math.min(product.stock, parseInt(e.target.value) || 1)))}
-                className="w-20 px-3 py-2 border-2 border-rose-200 rounded-lg text-center font-semibold focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none"
+                className="w-20 px-3 py-2 border-2 border-green-200 rounded-lg text-center font-semibold focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none"
               />
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
-                className="w-10 h-10 rounded-lg bg-white border-2 border-rose-200 text-rose-600 font-bold hover:bg-rose-100 transition-colors"
+                className="w-10 h-10 rounded-lg bg-white border-2 border-green-200 text-green-600 font-bold hover:bg-green-100 transition-colors"
               >
                 +
               </motion.button>
@@ -194,7 +194,7 @@ export function ProductDetail({ productId }: { productId: string }) {
               whileTap={{ scale: 0.98 }}
               onClick={handleAddToCart}
               disabled={product.stock === 0}
-              className="flex-1 bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-semibold py-4 px-6 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-rose-200"
+              className="flex-1 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-semibold py-4 px-6 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-200"
             >
               {t('common.addToCart')}
             </motion.button>
@@ -202,7 +202,7 @@ export function ProductDetail({ productId }: { productId: string }) {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               disabled={product.stock === 0}
-              className="flex-1 bg-gradient-to-r from-pink-600 to-pink-500 hover:from-pink-700 hover:to-pink-600 text-white font-semibold py-4 px-6 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-pink-200"
+              className="flex-1 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-semibold py-4 px-6 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-200"
             >
               {t('common.buyNow')}
             </motion.button>

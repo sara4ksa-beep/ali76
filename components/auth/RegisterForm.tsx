@@ -95,7 +95,7 @@ export function RegisterForm() {
           {...register('name')}
           type="text"
           id="name"
-          className="w-full px-5 py-3 border-2 border-rose-200 rounded-xl focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all bg-white"
+          className="w-full px-5 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-white"
           placeholder={t('auth.name')}
         />
         <AnimatePresence>
@@ -125,7 +125,7 @@ export function RegisterForm() {
           {...register('email')}
           type="email"
           id="email"
-          className="w-full px-5 py-3 border-2 border-rose-200 rounded-xl focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all bg-white"
+          className="w-full px-5 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-white"
           placeholder={t('auth.email')}
         />
         <AnimatePresence>
@@ -155,7 +155,7 @@ export function RegisterForm() {
           {...register('password')}
           type="password"
           id="password"
-          className="w-full px-5 py-3 border-2 border-rose-200 rounded-xl focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all bg-white"
+          className="w-full px-5 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-white"
           placeholder={t('auth.password')}
         />
         <AnimatePresence>
@@ -177,7 +177,7 @@ export function RegisterForm() {
         whileTap={{ scale: 0.98 }}
         type="submit"
         disabled={loading}
-        className="w-full bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-semibold py-4 px-6 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-rose-200"
+        className="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-semibold py-4 px-6 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-200"
       >
         {loading ? t('common.loading') : t('auth.register')}
       </motion.button>

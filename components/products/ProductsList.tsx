@@ -99,13 +99,13 @@ export function ProductsList() {
           placeholder={t('common.search')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="flex-1 px-5 py-3 border-2 border-rose-200 rounded-xl focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all bg-white"
+          className="flex-1 px-5 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-white"
         />
         <motion.select
           whileFocus={{ scale: 1.02 }}
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="px-5 py-3 border-2 border-rose-200 rounded-xl focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all bg-white font-medium"
+          className="px-5 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-white font-medium"
         >
           <option value="newest">{t('products.newest')}</option>
           <option value="oldest">{t('products.oldest')}</option>
@@ -137,7 +137,7 @@ export function ProductsList() {
                   transition={{ duration: 0.3 }}
                   className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all group cursor-pointer"
                 >
-                  <div className="aspect-square bg-gradient-to-br from-rose-100 to-pink-100 relative overflow-hidden">
+                  <div className="aspect-square bg-gradient-to-br from-green-100 to-green-100 relative overflow-hidden">
                     {product.images[0] ? (
                       <motion.div
                         whileHover={{ scale: 1.1 }}
@@ -164,10 +164,10 @@ export function ProductsList() {
                     )}
                   </div>
                   <div className="p-5">
-                    <h3 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-rose-600 transition-colors line-clamp-2">
+                    <h3 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-green-600 transition-colors line-clamp-2">
                       {getName(product)}
                     </h3>
-                    <p className="text-rose-600 font-bold text-xl mb-2">
+                    <p className="text-green-600 font-bold text-xl mb-2">
                       ${product.price.toFixed(2)}
                     </p>
                     <p className="text-sm text-gray-500">
