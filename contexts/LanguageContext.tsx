@@ -434,7 +434,6 @@ const translations: Record<Language, Record<string, string>> = {
     'admin.backToProducts': 'العودة إلى المنتجات',
     'admin.addProductDesc': 'إضافة منتج جديد',
     'admin.productNameEn': 'اسم المنتج (إنجليزي)',
-    'admin.productNameAr': 'اسم المنتج (عربي)',
     'admin.descriptionEn': 'الوصف (إنجليزي)',
     'admin.descriptionAr': 'الوصف (عربي)',
     'admin.priceDollar': 'السعر ($)',
