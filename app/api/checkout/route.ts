@@ -3,9 +3,15 @@ import { prisma } from '@/lib/prisma';
 import { requireAuth } from '@/lib/auth-helpers';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2025-10-29.clover',
-});
+const getStripe = () => {
+  const stripeKey = process.env.STRIPE_SECRET_KEY;
+  if (!stripeKey) {
+    throw new Error('STRIPE_SECRET_KEY is not configured');
+  }
+  return new Stripe(stripeKey, {
+    apiVersion: '2025-10-29.clover',
+  });
+};
 
 export async function POST(request: NextRequest) {
   try {
@@ -49,6 +55,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Create Stripe payment intent
+    const stripe = getStripe();
     const paymentIntent = await stripe.paymentIntents.create({
       amount: Math.round(total * 100), // Convert to cents
       currency: 'usd',
