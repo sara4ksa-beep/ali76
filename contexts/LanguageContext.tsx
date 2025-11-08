@@ -435,7 +435,6 @@ const translations: Record<Language, Record<string, string>> = {
     'admin.addProductDesc': 'إضافة منتج جديد',
     'admin.productNameEn': 'اسم المنتج (إنجليزي)',
     'admin.descriptionEn': 'الوصف (إنجليزي)',
-    'admin.descriptionAr': 'الوصف (عربي)',
     'admin.priceDollar': 'السعر ($)',
     'admin.stockQuantity': 'الكمية في المخزون',
     'admin.productImages': 'صور المنتج (روابط)',
