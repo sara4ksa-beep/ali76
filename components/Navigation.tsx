@@ -81,7 +81,7 @@ export function Navigation() {
               >
                 <Link
                   href={link.href}
-                  className="relative text-green-800 hover:text-green-600 transition-colors font-medium px-3 py-2 rounded-lg hover:bg-green-50"
+                  className="relative text-green-800 hover:text-green-600 transition-colors font-bold px-3 py-2 rounded-lg hover:bg-green-50"
                 >
                   {link.label}
                   <motion.span
@@ -111,7 +111,7 @@ export function Navigation() {
                   <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold text-sm">
                     {getUserDisplayName().charAt(0).toUpperCase()}
                   </div>
-                  <span className="text-green-800 font-medium hidden lg:block">
+                  <span className="text-green-800 font-bold hidden lg:block">
                     {getUserDisplayName()}
                   </span>
                   <motion.svg
@@ -204,7 +204,7 @@ export function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.3 }}
               >
-                <Link href="/login" className="text-green-800 hover:text-green-600 transition-colors font-medium px-4 py-2 rounded-lg hover:bg-green-50">
+                <Link href="/login" className="text-green-800 hover:text-green-600 transition-colors font-bold px-4 py-2 rounded-lg hover:bg-green-50">
                   {t('common.login')}
                 </Link>
               </motion.div>
@@ -218,7 +218,7 @@ export function Navigation() {
             >
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                className={`px-4 py-2 rounded-lg font-bold transition-all ${
                   language === 'en'
                     ? 'bg-green-600 text-white shadow-md shadow-green-200'
                     : 'text-gray-600 hover:text-green-600 hover:bg-white'
@@ -228,7 +228,7 @@ export function Navigation() {
               </button>
               <button
                 onClick={() => setLanguage('ar')}
-                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                className={`px-4 py-2 rounded-lg font-bold transition-all ${
                   language === 'ar'
                     ? 'bg-green-600 text-white shadow-md shadow-green-200'
                     : 'text-gray-600 hover:text-green-600 hover:bg-white'
@@ -283,7 +283,7 @@ export function Navigation() {
                     <Link
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
-                      className="block px-4 py-3 text-green-800 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors font-medium"
+                      className="block px-4 py-3 text-green-800 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors font-bold"
                     >
                       {link.label}
                     </Link>
@@ -347,7 +347,7 @@ export function Navigation() {
                     <Link
                       href="/login"
                       onClick={() => setMenuOpen(false)}
-                      className="block px-4 py-3 text-green-800 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors font-medium"
+                      className="block px-4 py-3 text-green-800 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors font-bold"
                     >
                       {t('common.login')}
                     </Link>

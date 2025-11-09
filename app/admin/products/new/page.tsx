@@ -281,20 +281,34 @@ export default function NewProductPage() {
             <label className="block text-sm font-medium text-gray-700 mb-2">
               {t('admin.category')} *
             </label>
-            <select
-              name="categoryId"
-              value={formData.categoryId}
-              onChange={handleInputChange}
-              required
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-            >
-              <option value="">{t('admin.selectCategory')}</option>
-              {categories.map((category) => (
-                <option key={category.id} value={category.id}>
-                  {category.nameAr}
-                </option>
-              ))}
-            </select>
+            {categories.length === 0 ? (
+              <div className="w-full px-4 py-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <p className="text-sm text-yellow-800 mb-2">
+                  {t('admin.noCategoriesAvailable') || 'No categories available. Please create a category first.'}
+                </p>
+                <Link
+                  href="/admin/categories"
+                  className="text-sm text-yellow-900 underline hover:text-yellow-700 font-semibold"
+                >
+                  {t('admin.goToCategories') || 'Go to Categories →'}
+                </Link>
+              </div>
+            ) : (
+              <select
+                name="categoryId"
+                value={formData.categoryId}
+                onChange={handleInputChange}
+                required
+                className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              >
+                <option value="">{t('admin.selectCategory') || 'Select a category'}</option>
+                {categories.map((category) => (
+                  <option key={category.id} value={category.id}>
+                    {language === 'ar' ? category.nameAr : category.name}
+                  </option>
+                ))}
+              </select>
+            )}
           </div>
         </div>
 

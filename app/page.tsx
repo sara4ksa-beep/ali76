@@ -53,14 +53,14 @@ const cardVariants = {
 
 export default function HomePage() {
   const { language, t } = useLanguage();
-  const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/products?featured=true&limit=3')
+    fetch('/api/products')
       .then(res => res.json())
       .then(data => {
-        setFeaturedProducts(data.products || []);
+        setProducts(data.products || []);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -111,7 +111,7 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Featured Products Section */}
+      {/* All Products Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.h2
@@ -121,20 +121,22 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl font-bold text-green-900 mb-12 text-center"
           >
-            {t('home.featuredProducts')}
+            {t('products.title') || 'All Products'}
           </motion.h2>
           {loading ? (
-            <div className="flex justify-center items-center py-12">
-              <div className="skeleton w-64 h-64 rounded-2xl" />
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[...Array(8)].map((_, i) => (
+                <div key={i} className="skeleton h-96 rounded-2xl" />
+              ))}
             </div>
-          ) : featuredProducts.length > 0 ? (
+          ) : products.length > 0 ? (
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"
             >
-              {featuredProducts.map((product, index) => (
+              {products.map((product, index) => (
                 <motion.div
                   key={product.id}
                   variants={cardVariants}

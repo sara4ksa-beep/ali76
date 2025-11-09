@@ -24,6 +24,17 @@ export default function AdminCategoriesPage() {
   const { t, language } = useLanguage();
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showForm, setShowForm] = useState(false);
+  const [formLoading, setFormLoading] = useState(false);
+  const [formError, setFormError] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    nameAr: '',
+    slug: '',
+    description: '',
+    descriptionAr: '',
+    image: '',
+  });
 
   useEffect(() => {
     fetchCategories();
@@ -60,6 +71,77 @@ export default function AdminCategoriesPage() {
     return language === 'ar' ? category.nameAr : category.name;
   };
 
+  const generateSlug = (text: string) => {
+    return text
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_-]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  };
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => {
+      const updated = { ...prev, [name]: value };
+      // Auto-generate slug from English name
+      if (name === 'name' && !prev.slug) {
+        updated.slug = generateSlug(value);
+      }
+      return updated;
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormError('');
+    setFormLoading(true);
+
+    if (!formData.name || !formData.nameAr || !formData.slug) {
+      setFormError('Please fill in all required fields');
+      setFormLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/categories', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          nameAr: formData.nameAr,
+          slug: formData.slug,
+          description: formData.description || null,
+          descriptionAr: formData.descriptionAr || null,
+          image: formData.image || null,
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to create category');
+      }
+
+      // Reset form and refresh categories
+      setFormData({
+        name: '',
+        nameAr: '',
+        slug: '',
+        description: '',
+        descriptionAr: '',
+        image: '',
+      });
+      setShowForm(false);
+      fetchCategories();
+    } catch (error: any) {
+      setFormError(error.message || 'Failed to create category');
+    } finally {
+      setFormLoading(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className="space-y-6">
@@ -79,10 +161,156 @@ export default function AdminCategoriesPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-gray-900">{t('admin.categories') || 'Categories'}</h1>
-        <div className="text-sm text-gray-600">
-          {categories.length} {t('admin.totalCategories') || 'Total Categories'}
+        <div className="flex items-center gap-4">
+          <div className="text-sm text-gray-600">
+            {categories.length} {t('admin.totalCategories') || 'Total Categories'}
+          </div>
+          <button
+            onClick={() => setShowForm(!showForm)}
+            className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-colors"
+          >
+            {showForm ? t('admin.cancel') || 'Cancel' : t('admin.createCategory') || '+ Create Category'}
+          </button>
         </div>
       </div>
+
+      {showForm && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-lg shadow-lg border border-gray-200 p-6"
+        >
+          <h2 className="text-xl font-bold text-gray-900 mb-4">{t('admin.createCategory') || 'Create New Category'}</h2>
+          
+          {formError && (
+            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4">
+              {formError}
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t('admin.categoryNameEn') || 'Name (English)'} *
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleFormChange}
+                  required
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  placeholder="Category name in English"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t('admin.categoryNameAr') || 'Name (Arabic)'} *
+                </label>
+                <input
+                  type="text"
+                  name="nameAr"
+                  value={formData.nameAr}
+                  onChange={handleFormChange}
+                  required
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  placeholder="اسم الفئة بالعربية"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                {t('admin.slug') || 'Slug'} *
+              </label>
+              <input
+                type="text"
+                name="slug"
+                value={formData.slug}
+                onChange={handleFormChange}
+                required
+                className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 font-mono focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="category-slug"
+              />
+              <p className="text-xs text-gray-500 mt-1">URL-friendly identifier (auto-generated from name)</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t('admin.descriptionEn') || 'Description (English)'}
+                </label>
+                <textarea
+                  name="description"
+                  value={formData.description}
+                  onChange={handleFormChange}
+                  rows={3}
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  placeholder="Category description in English"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {t('admin.descriptionAr') || 'Description (Arabic)'}
+                </label>
+                <textarea
+                  name="descriptionAr"
+                  value={formData.descriptionAr}
+                  onChange={handleFormChange}
+                  rows={3}
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  placeholder="وصف الفئة بالعربية"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                {t('admin.imageUrl') || 'Image URL'}
+              </label>
+              <input
+                type="url"
+                name="image"
+                value={formData.image}
+                onChange={handleFormChange}
+                className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                placeholder="https://example.com/image.jpg"
+              />
+            </div>
+
+            <div className="flex gap-4 pt-4">
+              <button
+                type="submit"
+                disabled={formLoading}
+                className="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-lg font-semibold transition-colors"
+              >
+                {formLoading ? t('admin.creating') || 'Creating...' : t('admin.createCategory') || 'Create Category'}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowForm(false);
+                  setFormError('');
+                  setFormData({
+                    name: '',
+                    nameAr: '',
+                    slug: '',
+                    description: '',
+                    descriptionAr: '',
+                    image: '',
+                  });
+                }}
+                className="px-6 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg font-semibold transition-colors"
+              >
+                {t('common.cancel') || 'Cancel'}
+              </button>
+            </div>
+          </form>
+        </motion.div>
+      )}
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
