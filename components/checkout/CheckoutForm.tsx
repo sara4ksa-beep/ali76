@@ -110,7 +110,7 @@ export function CheckoutForm() {
             <motion.input
               whileFocus={{ scale: 1.02 }}
               {...register('fullName')}
-              className="w-full px-5 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-white"
+              className="w-full px-5 py-3 border-2 border-orange-200 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all bg-white"
             />
             {errors.fullName && (
               <p className="text-red-600 text-sm mt-2">{errors.fullName.message}</p>
@@ -127,7 +127,7 @@ export function CheckoutForm() {
               whileFocus={{ scale: 1.02 }}
               {...register('email')}
               type="email"
-              className="w-full px-5 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-white"
+              className="w-full px-5 py-3 border-2 border-orange-200 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all bg-white"
             />
             {errors.email && (
               <p className="text-red-600 text-sm mt-2">{errors.email.message}</p>
@@ -143,7 +143,7 @@ export function CheckoutForm() {
             <motion.input
               whileFocus={{ scale: 1.02 }}
               {...register('address')}
-              className="w-full px-5 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-white"
+              className="w-full px-5 py-3 border-2 border-orange-200 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all bg-white"
             />
             {errors.address && (
               <p className="text-red-600 text-sm mt-2">{errors.address.message}</p>
@@ -160,7 +160,7 @@ export function CheckoutForm() {
               <motion.input
                 whileFocus={{ scale: 1.02 }}
                 {...register('city')}
-                className="w-full px-5 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-white"
+                className="w-full px-5 py-3 border-2 border-orange-200 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all bg-white"
               />
               {errors.city && (
                 <p className="text-red-600 text-sm mt-2">{errors.city.message}</p>
@@ -176,7 +176,7 @@ export function CheckoutForm() {
               <motion.input
                 whileFocus={{ scale: 1.02 }}
                 {...register('country')}
-                className="w-full px-5 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-white"
+                className="w-full px-5 py-3 border-2 border-orange-200 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all bg-white"
               />
               {errors.country && (
                 <p className="text-red-600 text-sm mt-2">{errors.country.message}</p>
@@ -193,7 +193,7 @@ export function CheckoutForm() {
             <motion.input
               whileFocus={{ scale: 1.02 }}
               {...register('postalCode')}
-              className="w-full px-5 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-white"
+              className="w-full px-5 py-3 border-2 border-orange-200 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all bg-white"
             />
           </motion.div>
 
@@ -202,7 +202,7 @@ export function CheckoutForm() {
             whileTap={{ scale: 0.98 }}
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-semibold py-4 rounded-xl transition-all disabled:opacity-50 shadow-lg shadow-green-200"
+            className="w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold py-4 rounded-xl transition-all disabled:opacity-50 shadow-lg shadow-orange-200"
           >
             {loading ? t('common.loading') : t('checkout.placeOrder')}
           </motion.button>
@@ -226,18 +226,18 @@ export function CheckoutForm() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
-                className="flex justify-between items-center p-4 bg-green-50 rounded-xl"
+                className="flex justify-between items-center p-4 bg-orange-50 rounded-xl"
               >
                 <span className="font-medium text-gray-700">Item x{item.quantity}</span>
-                <span className="font-bold text-green-600">${itemTotal.toFixed(2)}</span>
+                <span className="font-bold text-orange-600">${itemTotal.toFixed(2)}</span>
               </motion.div>
             );
           })}
         </div>
-        <div className="border-t-2 border-green-200 pt-6">
+        <div className="border-t-2 border-orange-200 pt-6">
           <div className="flex justify-between items-center">
             <span className="text-xl font-bold text-gray-800">{t('common.total')}:</span>
-            <span className="text-3xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">
+            <span className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
               ${total.toFixed(2)}
             </span>
           </div>

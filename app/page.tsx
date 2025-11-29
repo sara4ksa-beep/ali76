@@ -69,7 +69,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-green-50 to-green-100 py-24 md:py-32 px-4">
+      <section className="relative overflow-hidden bg-gradient-to-br from-orange-50 via-orange-50 to-orange-100 py-24 md:py-32 px-4">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(22,163,74,0.1),transparent_50%)]" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -81,7 +81,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-600 via-green-500 to-green-500 bg-clip-text text-transparent mb-6"
+            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-600 via-orange-500 to-orange-500 bg-clip-text text-transparent mb-6"
           >
             {t('home.title')}
           </motion.h1>
@@ -89,7 +89,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-xl md:text-2xl text-green-700 mb-10 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-orange-700 mb-10 max-w-2xl mx-auto"
           >
             {t('home.subtitle')}
           </motion.p>
@@ -102,7 +102,7 @@ export default function HomePage() {
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: '0 20px 25px -5px rgb(22 163 74 / 0.3)' }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-block bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-10 py-4 rounded-xl text-lg font-semibold shadow-lg shadow-green-200 transition-all cursor-pointer"
+                className="inline-block bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white px-10 py-4 rounded-xl text-lg font-semibold shadow-lg shadow-orange-200 transition-all cursor-pointer"
               >
                 {t('home.shopNow')}
               </motion.button>
@@ -119,7 +119,7 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold text-green-900 mb-12 text-center"
+            className="text-4xl md:text-5xl font-bold text-orange-900 mb-12 text-center"
           >
             {t('products.title') || 'All Products'}
           </motion.h2>
@@ -148,7 +148,7 @@ export default function HomePage() {
                       transition={{ duration: 0.3 }}
                       className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all group"
                     >
-                      <div className="aspect-square bg-gradient-to-br from-green-100 to-green-100 relative overflow-hidden">
+                      <div className="aspect-square bg-gradient-to-br from-orange-100 to-orange-100 relative overflow-hidden">
                         {product.images[0] ? (
                           <motion.div
                             whileHover={{ scale: 1.1 }}
@@ -170,10 +170,10 @@ export default function HomePage() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                       </div>
                       <div className="p-6 text-center">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-green-600 transition-colors">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors">
                           {language === 'ar' ? product.nameAr : product.name}
                         </h3>
-                        <p className="text-green-600 text-2xl font-bold">${product.price.toFixed(2)}</p>
+                        <p className="text-orange-600 text-2xl font-bold">${product.price.toFixed(2)}</p>
                       </div>
                     </motion.div>
                   </Link>

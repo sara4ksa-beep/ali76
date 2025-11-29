@@ -41,8 +41,8 @@ interface Order {
 
 const statusColors: Record<string, string> = {
   PENDING: 'bg-amber-100 text-amber-700',
-  PROCESSING: 'bg-green-100 text-green-700',
-  SHIPPED: 'bg-green-100 text-green-700',
+  PROCESSING: 'bg-orange-100 text-orange-700',
+  SHIPPED: 'bg-orange-100 text-orange-700',
   DELIVERED: 'bg-emerald-100 text-emerald-700',
   CANCELLED: 'bg-red-100 text-red-700',
 };
@@ -153,7 +153,7 @@ export default function ProfilePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-50 to-green-100 py-8 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-50 to-orange-100 py-8 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-4">
             <div className="skeleton h-64 rounded-2xl" />
@@ -169,7 +169,7 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-50 to-green-100 py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-50 to-orange-100 py-8 px-4">
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Profile Header */}
         <motion.div
@@ -178,7 +178,7 @@ export default function ProfilePage() {
           className="bg-white rounded-2xl shadow-xl p-8"
         >
           <div className="flex items-center justify-between mb-6">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 via-green-500 to-green-500 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 via-orange-500 to-orange-500 bg-clip-text text-transparent">
               {t('profile.title')}
             </h1>
             {!editing && (
@@ -186,7 +186,7 @@ export default function ProfilePage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setEditing(true)}
-                className="px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-semibold rounded-xl transition-all shadow-lg shadow-green-200"
+                className="px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold rounded-xl transition-all shadow-lg shadow-orange-200"
               >
                 {t('profile.edit')}
               </motion.button>
@@ -210,7 +210,7 @@ export default function ProfilePage() {
                     type="text"
                     value={editName}
                     onChange={(e) => setEditName(e.target.value)}
-                    className="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all"
+                    className="w-full px-4 py-3 border-2 border-orange-200 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all"
                     placeholder={t('profile.namePlaceholder')}
                   />
                 </div>
@@ -222,7 +222,7 @@ export default function ProfilePage() {
                     type="email"
                     value={editEmail}
                     onChange={(e) => setEditEmail(e.target.value)}
-                    className="w-full px-4 py-3 border-2 border-green-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all"
+                    className="w-full px-4 py-3 border-2 border-orange-200 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all"
                     placeholder={t('profile.emailPlaceholder')}
                   />
                 </div>
@@ -232,7 +232,7 @@ export default function ProfilePage() {
                     whileTap={{ scale: 0.98 }}
                     onClick={handleSaveProfile}
                     disabled={saving}
-                    className="flex-1 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-semibold py-3 px-6 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-200"
+                    className="flex-1 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold py-3 px-6 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-orange-200"
                   >
                     {saving ? t('common.loading') : t('common.save')}
                   </motion.button>
@@ -272,7 +272,7 @@ export default function ProfilePage() {
                 </div>
                 <div>
                   <p className="text-gray-500 text-sm mb-1">{t('profile.role')}</p>
-                  <p className="text-xl font-semibold text-green-600 uppercase">{user.role}</p>
+                  <p className="text-xl font-semibold text-orange-600 uppercase">{user.role}</p>
                 </div>
               </motion.div>
             )}
@@ -313,7 +313,7 @@ export default function ProfilePage() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-block bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg shadow-green-200 transition-all"
+                  className="inline-block bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg shadow-orange-200 transition-all"
                 >
                   {t('profile.startShopping')}
                 </motion.button>
@@ -327,7 +327,7 @@ export default function ProfilePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="border-2 border-green-100 rounded-xl p-6 hover:shadow-lg transition-all"
+                  className="border-2 border-orange-100 rounded-xl p-6 hover:shadow-lg transition-all"
                 >
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                     <div>
@@ -340,7 +340,7 @@ export default function ProfilePage() {
                     </div>
                     <div className="mt-4 md:mt-0 md:text-right">
                       <p className="text-sm text-gray-500 mb-1">{t('profile.orderTotal')}</p>
-                      <p className="text-2xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">
+                      <p className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
                         ${order.total.toFixed(2)}
                       </p>
                     </div>
@@ -355,13 +355,13 @@ export default function ProfilePage() {
                     </div>
                   </div>
 
-                  <div className="border-t border-green-100 pt-4 mt-4">
+                  <div className="border-t border-orange-100 pt-4 mt-4">
                     <p className="text-sm font-semibold text-gray-700 mb-3">{t('profile.orderItems')}</p>
                     <div className="space-y-2">
                       {order.items.map((item) => (
                         <div
                           key={item.id}
-                          className="flex items-center justify-between p-3 bg-green-50 rounded-lg"
+                          className="flex items-center justify-between p-3 bg-orange-50 rounded-lg"
                         >
                           <div className="flex-1">
                             <p className="font-semibold text-gray-800">{getName(item.product)}</p>
@@ -369,7 +369,7 @@ export default function ProfilePage() {
                               {t('common.quantity')}: {item.quantity} × ${item.price.toFixed(2)}
                             </p>
                           </div>
-                          <p className="font-bold text-green-600">
+                          <p className="font-bold text-orange-600">
                             ${(item.quantity * item.price).toFixed(2)}
                           </p>
                         </div>
@@ -377,7 +377,7 @@ export default function ProfilePage() {
                     </div>
                   </div>
 
-                  <div className="border-t border-green-100 pt-4 mt-4">
+                  <div className="border-t border-orange-100 pt-4 mt-4">
                     <p className="text-sm font-semibold text-gray-700 mb-2">{t('profile.shippingAddress')}</p>
                     <p className="text-gray-600">
                       {order.shippingAddress}, {order.shippingCity}, {order.shippingCountry}

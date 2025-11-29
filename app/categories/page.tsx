@@ -73,7 +73,7 @@ export default function CategoriesPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-50 to-green-100 py-8">
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-50 to-orange-100 py-8">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[...Array(6)].map((_, i) => (
@@ -86,12 +86,12 @@ export default function CategoriesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-50 to-green-100 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-50 to-orange-100 py-8">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold text-green-900 mb-12 text-center"
+          className="text-4xl md:text-5xl font-bold text-orange-900 mb-12 text-center"
         >
           {t('categories.title')}
         </motion.h1>
@@ -119,7 +119,7 @@ export default function CategoriesPage() {
                     transition={{ duration: 0.3 }}
                     className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all group cursor-pointer h-full flex flex-col"
                   >
-                    <div className="aspect-video bg-gradient-to-br from-green-100 to-green-100 relative overflow-hidden">
+                    <div className="aspect-video bg-gradient-to-br from-orange-100 to-orange-100 relative overflow-hidden">
                       {category.image ? (
                         <motion.div
                           whileHover={{ scale: 1.1 }}
@@ -153,7 +153,7 @@ export default function CategoriesPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                     <div className="p-6 flex-grow flex flex-col">
-                      <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors">
+                      <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors">
                         {getName(category)}
                       </h3>
                       {getDescription(category) && (
@@ -161,13 +161,13 @@ export default function CategoriesPage() {
                           {getDescription(category)}
                         </p>
                       )}
-                      <div className="flex items-center justify-between mt-auto pt-4 border-t border-green-100">
+                      <div className="flex items-center justify-between mt-auto pt-4 border-t border-orange-100">
                         <span className="text-sm text-gray-500">
                           {category._count.products} {t('categories.products')}
                         </span>
                         <motion.span
                           whileHover={{ x: language === 'ar' ? -5 : 5 }}
-                          className="text-green-600 font-semibold group-hover:text-green-700 transition-colors flex items-center gap-1"
+                          className="text-orange-600 font-semibold group-hover:text-orange-700 transition-colors flex items-center gap-1"
                         >
                           {t('categories.viewProducts')}
                           <svg

@@ -19,9 +19,9 @@ export default function TermsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-50 to-green-100">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-50 to-orange-100">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-green-100 via-green-100 to-green-200 py-20 md:py-28 px-4">
+      <section className="relative overflow-hidden bg-gradient-to-br from-orange-100 via-orange-100 to-orange-200 py-20 md:py-28 px-4">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(22,163,74,0.1),transparent_50%)]" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -29,10 +29,10 @@ export default function TermsPage() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center relative z-10"
         >
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-600 via-green-500 to-green-500 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-600 via-orange-500 to-orange-500 bg-clip-text text-transparent mb-6">
             {t('terms.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-green-700 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-orange-700 max-w-2xl mx-auto">
             {t('terms.subtitle')}
           </p>
           <p className="text-sm text-gray-600 mt-4">
@@ -51,7 +51,7 @@ export default function TermsPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-900 mb-6">
               {t('terms.acceptance')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
@@ -69,7 +69,7 @@ export default function TermsPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-900 mb-6">
               {t('terms.useOfService')}
             </h2>
             <div className="space-y-4">
@@ -99,7 +99,7 @@ export default function TermsPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-900 mb-6">
               {t('terms.products')}
             </h2>
             <div className="space-y-4">
@@ -119,7 +119,7 @@ export default function TermsPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-900 mb-6">
               {t('terms.orders')}
             </h2>
             <ul className="space-y-3 text-lg text-gray-700 leading-relaxed list-disc list-inside">
@@ -137,7 +137,7 @@ export default function TermsPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-900 mb-6">
               {t('terms.payment')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
@@ -155,7 +155,7 @@ export default function TermsPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-900 mb-6">
               {t('terms.returns')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
@@ -173,7 +173,7 @@ export default function TermsPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-900 mb-6">
               {t('terms.limitation')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
@@ -188,7 +188,7 @@ export default function TermsPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-900 mb-6">
               {t('terms.changes')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
@@ -203,7 +203,7 @@ export default function TermsPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-900 mb-6">
               {t('terms.contact')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-4">

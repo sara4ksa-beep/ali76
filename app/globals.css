@@ -1,36 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f0fdf4;
-  --foreground: #14532d;
-  --primary: #16a34a;
-  --primary-dark: #15803d;
-  --primary-light: #dcfce7;
-  --secondary: #22c55e;
-  --accent: #4ade80;
-  --muted: #f0fdf4;
-  --border: #bbf7d0;
+  --background: #fff7ed;
+  --foreground: #7c2d12;
+  --primary: #ea580c;
+  --primary-dark: #c2410c;
+  --primary-light: #ffedd5;
+  --secondary: #f97316;
+  --accent: #fb923c;
+  --muted: #fff7ed;
+  --border: #fed7aa;
   --card: #ffffff;
   --card-foreground: #1f2937;
   
   /* Enhanced color palette */
-  --green-50: #f0fdf4;
-  --green-100: #dcfce7;
-  --green-200: #bbf7d0;
-  --green-300: #86efac;
-  --green-400: #4ade80;
-  --green-500: #22c55e;
-  --green-600: #16a34a;
-  --green-700: #15803d;
-  --green-800: #166534;
-  --green-900: #14532d;
+  --orange-50: #fff7ed;
+  --orange-100: #ffedd5;
+  --orange-200: #fed7aa;
+  --orange-300: #fdba74;
+  --orange-400: #fb923c;
+  --orange-500: #f97316;
+  --orange-600: #ea580c;
+  --orange-700: #c2410c;
+  --orange-800: #9a3412;
+  --orange-900: #7c2d12;
   
   /* Shadow system */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-green: 0 10px 15px -3px rgb(22 163 74 / 0.1), 0 4px 6px -4px rgb(22 163 74 / 0.1);
+  --shadow-orange: 0 10px 15px -3px rgb(234 88 12 / 0.1), 0 4px 6px -4px rgb(234 88 12 / 0.1);
   
   /* Spacing scale */
   --spacing-xs: 0.25rem;
@@ -71,17 +71,17 @@
 }
 
 [data-theme="dark"] {
-  --background: #0a1f0e;
-  --foreground: #dcfce7;
-  --primary: #22c55e;
-  --primary-dark: #16a34a;
-  --primary-light: #14532d;
-  --secondary: #4ade80;
-  --accent: #86efac;
-  --muted: #1a2e1a;
-  --border: #166534;
-  --card: #1a2e1a;
-  --card-foreground: #dcfce7;
+  --background: #1c0f07;
+  --foreground: #ffedd5;
+  --primary: #f97316;
+  --primary-dark: #ea580c;
+  --primary-light: #7c2d12;
+  --secondary: #fb923c;
+  --accent: #fdba74;
+  --muted: #2e1a0f;
+  --border: #9a3412;
+  --card: #2e1a0f;
+  --card-foreground: #ffedd5;
 }
 
 html {
@@ -257,7 +257,7 @@ button:active, .btn:active {
 }
 
 .glass-dark {
-  background: rgba(10, 31, 14, 0.8);
+  background: rgba(28, 15, 7, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -297,7 +297,7 @@ button:active, .btn:active {
   background: linear-gradient(
     90deg,
     var(--muted) 0px,
-    var(--green-100) 40px,
+    var(--orange-100) 40px,
     var(--muted) 80px
   );
   background-size: 1000px;
@@ -305,10 +305,10 @@ button:active, .btn:active {
 }
 
 /* Gradient utilities */
-.gradient-green {
-  background: linear-gradient(135deg, var(--green-500) 0%, var(--green-700) 100%);
+.gradient-orange {
+  background: linear-gradient(135deg, var(--orange-500) 0%, var(--orange-700) 100%);
 }
 
-.gradient-green-light {
-  background: linear-gradient(135deg, var(--green-50) 0%, var(--green-100) 50%, var(--green-50) 100%);
+.gradient-orange-light {
+  background: linear-gradient(135deg, var(--orange-50) 0%, var(--orange-100) 50%, var(--orange-50) 100%);
 }

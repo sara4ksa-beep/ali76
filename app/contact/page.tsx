@@ -53,9 +53,9 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-green-50 to-green-100">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-50 to-orange-100">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-green-100 via-green-100 to-green-200 py-20 md:py-28 px-4">
+      <section className="relative overflow-hidden bg-gradient-to-br from-orange-100 via-orange-100 to-orange-200 py-20 md:py-28 px-4">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(22,163,74,0.1),transparent_50%)]" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -63,10 +63,10 @@ export default function ContactPage() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center relative z-10"
         >
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-600 via-green-500 to-green-500 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-600 via-orange-500 to-orange-500 bg-clip-text text-transparent mb-6">
             {t('contact.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-green-700 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-orange-700 max-w-2xl mx-auto">
             {t('contact.subtitle')}
           </p>
         </motion.div>
@@ -89,16 +89,16 @@ export default function ContactPage() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-500 rounded-full flex items-center justify-center mb-6 mx-auto text-white">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-500 rounded-full flex items-center justify-center mb-6 mx-auto text-white">
                   {info.icon}
                 </div>
-                <h3 className="text-xl font-bold text-green-900 mb-4">
+                <h3 className="text-xl font-bold text-orange-900 mb-4">
                   {info.title}
                 </h3>
                 {info.link ? (
                   <a
                     href={info.link}
-                    className="text-gray-700 hover:text-green-600 transition-colors"
+                    className="text-gray-700 hover:text-orange-600 transition-colors"
                   >
                     {info.value}
                   </a>
@@ -117,7 +117,7 @@ export default function ContactPage() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl shadow-xl p-8 md:p-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-900 mb-8 text-center">
               {t('contact.businessHours')}
             </h2>
             <div className="max-w-2xl mx-auto space-y-4">
@@ -136,7 +136,7 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex justify-between items-center py-3 border-b border-green-100 last:border-0"
+                  className="flex justify-between items-center py-3 border-b border-orange-100 last:border-0"
                 >
                   <span className="text-lg font-semibold text-gray-800">
                     {schedule.day}

@@ -79,7 +79,7 @@ export function Footer() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-gradient-to-br from-green-50 via-green-50 to-green-100 border-t border-green-200/50"
+      className="bg-gradient-to-br from-orange-50 via-orange-50 to-orange-100 border-t border-orange-200/50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
@@ -93,13 +93,13 @@ export function Footer() {
           >
             <Link href="/" className="inline-flex items-center gap-3 mb-4">
               <Image
-                src="/saudisoq.png"
+                src="/ali76.png"
                 alt="Saudi Products Market Logo"
                 width={150}
                 height={50}
                 className="h-14 w-auto object-contain"
               />
-              <span className="text-2xl font-bold bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
                 {language === 'ar' ? 'السوق السعودي للمنتجات' : 'Saudi Products Market'}
               </span>
             </Link>
@@ -112,7 +112,7 @@ export function Footer() {
                   key={social.name}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition-colors cursor-default"
+                  className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-orange-600 hover:bg-orange-600 hover:text-white transition-colors cursor-default"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -128,7 +128,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h4 className="text-lg font-semibold text-green-900 mb-4">
+            <h4 className="text-lg font-semibold text-orange-900 mb-4">
               {t('footer.shop')}
             </h4>
             <ul className="space-y-2">
@@ -136,7 +136,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 hover:text-green-600 transition-colors text-sm"
+                    className="text-gray-600 hover:text-orange-600 transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -152,7 +152,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <h4 className="text-lg font-semibold text-green-900 mb-4">
+            <h4 className="text-lg font-semibold text-orange-900 mb-4">
               {t('footer.company')}
             </h4>
             <ul className="space-y-2">
@@ -160,7 +160,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 hover:text-green-600 transition-colors text-sm"
+                    className="text-gray-600 hover:text-orange-600 transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -176,7 +176,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <h4 className="text-lg font-semibold text-green-900 mb-4">
+            <h4 className="text-lg font-semibold text-orange-900 mb-4">
               {t('footer.information')}
             </h4>
             <ul className="space-y-2">
@@ -184,7 +184,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 hover:text-green-600 transition-colors text-sm"
+                    className="text-gray-600 hover:text-orange-600 transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -200,7 +200,7 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-12 pt-8 border-t border-green-200/50"
+          className="mt-12 pt-8 border-t border-orange-200/50"
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-600 text-center md:text-left">

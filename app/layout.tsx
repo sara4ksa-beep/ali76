@@ -16,7 +16,7 @@ const cairo = Cairo({
 
 export const metadata: Metadata = {
   title: "السوق السعودي للمنتجات",
-  description: "Saudi Products Market - Beautiful e-commerce store with green theme",
+  description: "Saudi Products Market - Beautiful e-commerce store with orange theme",
 };
 
 export default function RootLayout({
