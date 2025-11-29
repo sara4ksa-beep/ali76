@@ -93,7 +93,7 @@ export function Footer() {
           >
             <Link href="/" className="inline-flex items-center gap-3 mb-4">
               <Image
-                src="/ali76.png"
+                src="/Ali76.png"
                 alt="Saudi Products Market Logo"
                 width={150}
                 height={50}
