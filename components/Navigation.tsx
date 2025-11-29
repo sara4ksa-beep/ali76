@@ -59,14 +59,14 @@ export function Navigation() {
             <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/Ali76.png"
-                alt="Saudi Products Market Logo"
+                alt="Ali76 Logo"
                 width={180}
                 height={60}
                 className="h-16 w-auto object-contain"
                 priority
               />
               <span className="text-2xl font-bold text-orange-800">
-                {language === 'ar' ? 'السوق السعودي للمنتجات' : 'Saudi Products Market'}
+                Ali76
               </span>
             </Link>
           </motion.div>

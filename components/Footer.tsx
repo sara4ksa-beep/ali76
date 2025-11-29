@@ -94,13 +94,13 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center gap-3 mb-4">
               <Image
                 src="/Ali76.png"
-                alt="Saudi Products Market Logo"
+                alt="Ali76 Logo"
                 width={150}
                 height={50}
                 className="h-14 w-auto object-contain"
               />
               <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
-                {language === 'ar' ? 'السوق السعودي للمنتجات' : 'Saudi Products Market'}
+                Ali76
               </span>
             </Link>
             <p className="text-gray-600 mb-4 text-sm leading-relaxed">
@@ -204,7 +204,7 @@ export function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-600 text-center md:text-left">
-              © {new Date().getFullYear()} {language === 'ar' ? 'السوق السعودي للمنتجات' : 'Saudi Products Market'}. {t('footer.allRightsReserved')}.
+              © {new Date().getFullYear()} Ali76. {t('footer.allRightsReserved')}.
             </p>
           </div>
         </motion.div>
