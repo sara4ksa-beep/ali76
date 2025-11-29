@@ -93,7 +93,7 @@ export function Footer() {
           >
             <Link href="/" className="inline-flex items-center gap-3 mb-4">
               <Image
-                src="/Ali76.png"
+                src="/alii76.png"
                 alt="Ali76 Logo"
                 width={150}
                 height={50}

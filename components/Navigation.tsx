@@ -58,7 +58,7 @@ export function Navigation() {
           >
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="/Ali76.png"
+                src="/alii76.png"
                 alt="Ali76 Logo"
                 width={180}
                 height={60}
