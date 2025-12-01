@@ -169,7 +169,7 @@ export default function PrivacyPage() {
               {t('privacy.contactContent')}
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              <strong>{t('privacy.email')}:</strong> support@saudiproductsmarket.com
+              <strong>{t('privacy.email')}:</strong> info@ali76.com
             </p>
           </motion.div>
         </div>

@@ -210,7 +210,7 @@ export default function TermsPage() {
               {t('terms.contactContent')}
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              <strong>{t('terms.email')}:</strong> support@saudiproductsmarket.com
+              <strong>{t('terms.email')}:</strong> info@ali76.com
             </p>
           </motion.div>
         </div>

@@ -26,8 +26,8 @@ export default function ContactPage() {
         </svg>
       ),
       title: t('contact.email'),
-      value: 'info@saudiproductsmarket.com',
-      link: 'mailto:info@saudiproductsmarket.com',
+      value: 'info@ali76.com',
+      link: 'mailto:info@ali76.com',
     },
     {
       icon: (
@@ -36,8 +36,8 @@ export default function ContactPage() {
         </svg>
       ),
       title: t('contact.phone'),
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '00966551781111',
+      link: 'tel:00966551781111',
     },
     {
       icon: (
@@ -47,7 +47,7 @@ export default function ContactPage() {
         </svg>
       ),
       title: t('contact.address'),
-      value: t('contact.addressValue'),
+      value: 'حي الشاطي - جدة - المملكة العربية السعودية',
       link: null,
     },
   ];
