@@ -206,6 +206,12 @@ export function Footer() {
             <p className="text-sm text-gray-600 text-center md:text-left">
               © {new Date().getFullYear()} Ali76. {t('footer.allRightsReserved')}.
             </p>
+            <Link
+              href="/contact"
+              className="text-sm text-orange-600 hover:text-orange-700 font-medium transition-colors underline underline-offset-4"
+            >
+              {t('footer.contactUsForFeedback')}
+            </Link>
           </div>
         </motion.div>
       </div>
