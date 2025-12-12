@@ -170,9 +170,9 @@ export default function HomePage() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                       </div>
                       <div className="p-6 text-center">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-orange-600 transition-colors">
+                        <p className="font-bold text-[16px] md:text-[17px] mb-1 text-gray-800 group-hover:text-rose-600 transition-colors line-clamp-2 leading-tight">
                           {language === 'ar' ? product.nameAr : product.name}
-                        </h3>
+                        </p>
                         <p className="text-orange-600 text-2xl font-bold">${product.price.toFixed(2)}</p>
                       </div>
                     </motion.div>

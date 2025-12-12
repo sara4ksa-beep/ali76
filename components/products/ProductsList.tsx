@@ -164,9 +164,9 @@ export function ProductsList() {
                     )}
                   </div>
                   <div className="p-5">
-                    <h3 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-orange-600 transition-colors line-clamp-2">
+                    <p className="font-bold text-[16px] md:text-[17px] mb-1 text-gray-800 group-hover:text-rose-600 transition-colors line-clamp-2 leading-tight">
                       {getName(product)}
-                    </h3>
+                    </p>
                     <p className="text-orange-600 font-bold text-xl mb-2">
                       ${product.price.toFixed(2)}
                     </p>
