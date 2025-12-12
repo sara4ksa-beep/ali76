@@ -75,6 +75,8 @@ const translations: Record<Language, Record<string, string>> = {
     'cart.empty': 'Your cart is empty',
     'cart.continueShopping': 'Continue Shopping',
     'cart.proceedToCheckout': 'Proceed to Checkout',
+    'cart.addedToCart': '{name} added to cart',
+    'cart.addToCartError': 'Failed to add product to cart',
     // Checkout
     'checkout.title': 'Checkout',
     'checkout.shippingInfo': 'Shipping Information',
@@ -356,6 +358,8 @@ const translations: Record<Language, Record<string, string>> = {
     'cart.empty': 'سلة التسوق فارغة',
     'cart.continueShopping': 'متابعة التسوق',
     'cart.proceedToCheckout': 'المتابعة للدفع',
+    'cart.addedToCart': 'تم إضافة {name} إلى السلة',
+    'cart.addToCartError': 'فشل إضافة المنتج إلى السلة',
     // Checkout
     'checkout.title': 'الدفع',
     'checkout.shippingInfo': 'معلومات الشحن',

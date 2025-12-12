@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
 import { useCart } from '@/hooks/useCart';
 import { motion } from 'framer-motion';
+import toast from 'react-hot-toast';
 
 interface Product {
   id: string;
@@ -23,6 +25,7 @@ interface Product {
 
 export function ProductDetail({ productId }: { productId: string }) {
   const { language, t } = useLanguage();
+  const router = useRouter();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
@@ -45,9 +48,30 @@ export function ProductDetail({ productId }: { productId: string }) {
     }
   };
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     if (product) {
-      addToCart(product.id, quantity);
+      try {
+        await addToCart(product.id, quantity);
+        const productName = language === 'ar' ? product.nameAr : product.name;
+        const message = t('cart.addedToCart').replace('{name}', productName);
+        toast.success(message);
+      } catch (error) {
+        toast.error(t('cart.addToCartError'));
+      }
+    }
+  };
+
+  const handleBuyNow = async () => {
+    if (product) {
+      try {
+        await addToCart(product.id, quantity);
+        const productName = language === 'ar' ? product.nameAr : product.name;
+        const message = t('cart.addedToCart').replace('{name}', productName);
+        toast.success(message);
+        router.push('/checkout');
+      } catch (error) {
+        toast.error(t('cart.addToCartError'));
+      }
     }
   };
 
@@ -201,6 +225,7 @@ export function ProductDetail({ productId }: { productId: string }) {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={handleBuyNow}
               disabled={product.stock === 0}
               className="flex-1 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-semibold py-4 px-6 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-orange-200"
             >

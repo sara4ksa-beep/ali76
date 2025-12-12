@@ -55,13 +55,17 @@ export function useCart() {
     if (session) {
       // Sync with server
       try {
-        await fetch('/api/cart', {
+        const response = await fetch('/api/cart', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ productId, quantity }),
         });
+        if (!response.ok) {
+          throw new Error('Failed to add to cart');
+        }
       } catch (error) {
         console.error('Error syncing cart:', error);
+        throw error;
       }
     }
     store.addToCart(productId, quantity);

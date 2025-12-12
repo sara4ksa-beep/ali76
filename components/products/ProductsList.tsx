@@ -164,7 +164,7 @@ export function ProductsList() {
                     )}
                   </div>
                   <div className="p-5">
-                    <p className="font-bold text-[16px] md:text-[17px] mb-1 text-gray-800 group-hover:text-rose-600 transition-colors line-clamp-2 leading-tight">
+                    <p className="font-bold text-[16px] md:text-[17px] mb-1 text-gray-800 group-hover:text-orange-600 transition-colors line-clamp-2 leading-tight">
                       {getName(product)}
                     </p>
                     <p className="text-orange-600 font-bold text-xl mb-2">
